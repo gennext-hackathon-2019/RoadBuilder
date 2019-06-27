@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RoadBuilder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+  <!-- CSS  stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <!-- favicon -->
+  <!-- <link rel="icon" href="images/favicon.png"> -->
+
+</head>
+
+<body data-target=".navbar" data-offset="50">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top" id=myNavbar>
+        <a class="navbar-brand" href="#home">RoadBuilder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav" >
+        </ul>
+        <!-- <form class="form-inline"> -->
+            <button type="submit" class="btn btn-black ml-auto" id="logout-button">Logout</button>
+          <!-- </form> -->
+        </nav>
+
+  <div id="home" class="container-fluid">
+
+
+    <div class="table-responsive"></div>
+        <table id="grid-selection" class="table table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <td id="title-col" data-column="Product" >Quarter 1</td>
+                        <td id="title-col" data-column="Product" >Quarter 2</td>
+                        <td id="title-col" data-column="Product" >Quarter 3</td>
+                        <td id="title-col" data-column="Product" >Quarter 4</td>
+                    </tr> 
+                    <tr>
+                        <td width="200px" id="title-col" data-column="Product">Product</td>
+                        <td width="200px" id="runtime-col" data-column="Jan">Jan</td>
+                        <td width="200px" id="runtime-col" data-column="Feb">Feb</td>
+                        <td width="200px" id="runtime-col" data-column="Mar">Mar</td>
+                        <td width="200px" id="runtime-col" data-column="April">April</td>
+                        <td width="200px" id="runtime-col" data-column="May">May</td>
+                        <td width="200px" id="runtime-col" data-column="June">June</td>
+                        <td width="200px" id="runtime-col" data-column="July">July</td>
+                        <td width="200px" id="runtime-col" data-column="Aug">Aug</td>
+                        <td width="200px" id="runtime-col" data-column="Sep">Sep</td>
+                        <td width="200px" id="runtime-col" data-column="Oct">Oct</td>
+                        <td width="200px" id="runtime-col" data-column="Nov">Nov</td>
+                        <td width="200px" id="runtime-col" data-column="Dec">Dec</td>
+                    </tr>    
+                </thead>
+                <tbody id="table">
+                        <tr>
+                            <td class="toggler" data-prod="1">Test Product</td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data-prod="1"></td>
+                        </tr>
+                        <tr class="sub1" style="display:none">
+                            <td></td>
+                            <td>Something here</td>
+                            <td>and here</td>
+                            <td>more stuff</td>
+                        </tr>
+                        <tr>
+                                <td class="toggler" data-prod="2">Test Product 2</td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                                <td class="toggler" data-prod="2"></td>
+                            </tr>
+                            <tr class="sub2" style="display:none">
+                                <td></td>
+                                <td>Something here 2</td>
+                                <td>and here 2</td>
+                                <td>more stuff 2</td>
+                            </tr>
+                </tbody>
+        </table>
+
+        
+
+  </div>
+
+  <script>
+        $(document).ready(function(){
+            $(".toggler").click(function(e){
+                e.preventDefault();
+                $('.sub'+$(this).attr('data-prod')).toggle();
+            });
+        });
+  
+  </script>
+
+</body>
+</html>
