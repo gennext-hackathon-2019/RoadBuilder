@@ -20,27 +20,55 @@
 </head>
 
   <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top" id=myNavbar>
+    <a class="navbar-brand" href="#home">RoadBuilder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav" >
+    </ul>
+    <!-- <form class="form-inline"> -->
+      <!-- </form> -->
+    </nav>
+
   <div class="split right">
 
     <div class="loginDetails">
       <h1>WELCOME</h1>
-      <div class="loginFields">
-      <form class="" action="" method="post" enctype="text/plain">
-        <label id="userName"> Username: </label> <br />
-        <input type="text" name="Username" value="" /><br />
-        <label> Password: </label> <br />
-        <input type="password" name="Password" value="" /><br />
-      </form>
-      <a href="index.html"> Login </a> <br>
-      <a href="Signup.html"> Signup </a>
-    </div>
-    </div>
+        <div class="formGroup col-md-6 col-sm-12">
+          <form>
+            <label for:"userName">Username:</label>
+            <input type="text" class="form-control" id="userName" /><br />
+          </form>
+        </div>
+        <div class="formGroup col-md-6 col-sm-12">
+          <form>
+          <label for:"password">Password:</label>
+          <input type="password" class="form-control" id="password" /><br />
+        </form>
+        </div>
+        <button onclick="login()" type="button" class="btn btn-primary btn-lg">Login</button>
+        <br>
+        <button onclick="window.location.href = 'signup.html'" type="button" class="btn btn-default btn-lg">Signup</button>
+      </div>
+      </div>
   </div>
-
   <div class="split left">
     <!--<img src="logo.jpg" alt="">-->
   </div>
+  <script>
+      function login(){
+        var user = document.getElementById('userName').value;
+        var password = document.getElementById('password').value;
+        console.log("username:" + user);
+        console.log("password:" + password);
+      }
+      function signup(){
 
+      }
+
+  </script>
 
 
   </body>

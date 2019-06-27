@@ -1,6 +1,6 @@
 .split{
   height: 100%;
-  width: 60%;
+  width: 50%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -17,5 +17,8 @@
   background-color: #644117;
 }
 .loginDetails{
+  text-align: center;
+}
+.formGroup{
   text-align: center;
 }

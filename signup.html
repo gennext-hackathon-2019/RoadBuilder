@@ -20,27 +20,65 @@
 </head>
 
   <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top" id=myNavbar>
+    <a class="navbar-brand" href="#home">RoadBuilder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav" >
+    </ul>
+    <!-- <form class="form-inline"> -->
+    <!-- </form> -->
+    </nav>
+
     <div class="split right">
 
       <div class="signupDetails">
        <h1> Signup </h1>
-       <form class="" action="index.html" method="post">
-         <label> Email: </label><br>
-         <input type="text" name="Email" value=""><br>
-         <label> Username: </label><br>
-         <input type="text" name="Username" value=""><br>
-         <label> Password: </label><br>
-         <input type="password" name="Password" value=""><br>
-         <label> Confirm Password: </label><br>
-         <input type="password" name="Password" value=""><br>
-         <a href="login.html"> Create Account </a><br>
-         <a href="login.html"> Back to Login </a>
-       </form>
-     </div>
+       <div class="formGroup col-md-6 col-sm-12">
+         <form>
+           <label for:"email"> Email: </label><br>
+           <input type="text" class="form-control" id="email" /><br>
+         </form>
+       </div>
+       <div class="formGroup col-md-6 col-sm-12">
+         <form>
+           <label for:"username"> Username: </label>
+           <input type="text" class="form-control" id="username">
+         </form>
+       </div>
+       <div class="formGroup col-md-6 col-sm-12">
+         <form>
+           <label for:"password">Password:</label>
+           <input type="password" class="form-control" id="password">
+         </form>
+       </div>
+       <div class="formGroup col-md-6 col-sm-12">
+         <form>
+           <label for:"passwordConf">Confirm Password:</label>
+           <input type="password" class="form-control" id="passwordConf">
+         </form>
+       </div>
+       </div>
 
-   </div>
+       <button onclick="createAccount()" type="button" class="btn btn-primary btn-lg">Create Account</button>
+       <br>
+       <button onclick="window.location.href = 'login.html'" type="button" class="btn btn-default btn-lg">Back To Login</button>
+
+     </div>
    <div class="split left">
    </div>
+
+   <script>
+        function createAccount(){
+          console.log("email: " + document.getElementById('email').value);
+          console.log("username: " + document.getElementById('username').value);
+          console.log("password: " + document.getElementById('password').value);
+          console.log("passwordConf: " + document.getElementById('passwordConf').value);
+        }
+
+   </script>
 
   </body>
 </html>
