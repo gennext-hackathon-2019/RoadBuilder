@@ -22,10 +22,6 @@
 <body data-target=".navbar" data-offset="50">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top" id=myNavbar>
         <a class="navbar-brand" href="#home">RoadBuilder</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav" >
         </ul>
         <!-- <form class="form-inline"> -->
@@ -35,79 +31,93 @@
 
   <div id="home" class="container-fluid">
 
-
-    <div class="table-responsive"></div>
         <table id="grid-selection" class="table table-condensed table-hover table-striped">
                 <thead>
                     <tr>
-                        <td id="title-col" data-column="Product" >Quarter 1</td>
-                        <td id="title-col" data-column="Product" >Quarter 2</td>
-                        <td id="title-col" data-column="Product" >Quarter 3</td>
-                        <td id="title-col" data-column="Product" >Quarter 4</td>
-                    </tr> 
+                    <td id="title-col"></td>
+                    <td id="title-col" colspan="3" class="text-center">Quarter 1</td>
+                    <td id="title-col" colspan="3" class="text-center">Quarter 2</td>
+                    <td id="title-col" colspan="3" class="text-center">Quarter 3</td>
+                    <td id="title-col" colspan="3" class="text-center">Quarter 4</td>
+                    </tr>
+
                     <tr>
-                        <td width="200px" id="title-col" data-column="Product">Product</td>
-                        <td width="200px" id="runtime-col" data-column="Jan">Jan</td>
-                        <td width="200px" id="runtime-col" data-column="Feb">Feb</td>
-                        <td width="200px" id="runtime-col" data-column="Mar">Mar</td>
-                        <td width="200px" id="runtime-col" data-column="April">April</td>
-                        <td width="200px" id="runtime-col" data-column="May">May</td>
-                        <td width="200px" id="runtime-col" data-column="June">June</td>
-                        <td width="200px" id="runtime-col" data-column="July">July</td>
-                        <td width="200px" id="runtime-col" data-column="Aug">Aug</td>
-                        <td width="200px" id="runtime-col" data-column="Sep">Sep</td>
-                        <td width="200px" id="runtime-col" data-column="Oct">Oct</td>
-                        <td width="200px" id="runtime-col" data-column="Nov">Nov</td>
-                        <td width="200px" id="runtime-col" data-column="Dec">Dec</td>
+                        <td id="title-col" data-column="Product">Product</td>
+                        <td id="month-col" data-column="Jan">Jan</td>
+                        <td id="month-col" data-column="Feb">Feb</td>
+                        <td id="month-col" data-column="Mar">Mar</td>
+                        <td id="month-col" data-column="April">April</td>
+                        <td id="month-col" data-column="May">May</td>
+                        <td id="month-col" data-column="June">June</td>
+                        <td id="month-col" data-column="July">July</td>
+                        <td id="month-col" data-column="Aug">Aug</td>
+                        <td id="month-col" data-column="Sep">Sep</td>
+                        <td id="month-col" data-column="Oct">Oct</td>
+                        <td id="month-col" data-column="Nov">Nov</td>
+                        <td id="month-col" data-column="Dec">Dec</td>
                     </tr>    
                 </thead>
                 <tbody id="table">
                         <tr>
-                            <td class="toggler" data-prod="1">Test Product</td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
-                            <td class="toggler" data-prod="1"></td>
+                            <td class="toggler" data="1" colspan="13" id="Test Product">Test Product</td>
+                            <tr class="sub1" style="display:none">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>     
+                                </tr>
                         </tr>
-                        <tr class="sub1" style="display:none">
-                            <td></td>
-                            <td>Something here</td>
-                            <td>and here</td>
-                            <td>more stuff</td>
-                        </tr>
+                        
                         <tr>
-                                <td class="toggler" data-prod="2">Test Product 2</td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
-                                <td class="toggler" data-prod="2"></td>
+                            <td class="toggler" data="1" colspan="13">Test Product 2</td>
+                            <tr class="sub1" style="display:none">
+                                    <td></td>
+                                    <td>Something here</td>
+                                    <td>and here</td>
+                                    <td>more stuff</td>
+                                </tr>
                             </tr>
-                            <tr class="sub2" style="display:none">
-                                <td></td>
-                                <td>Something here 2</td>
-                                <td>and here 2</td>
-                                <td>more stuff 2</td>
-                            </tr>
+                            
                 </tbody>
         </table>
 
-        
+        <div id="add" class="container">
+                <h4><br>Add a feature to product...</h4>
+                    <div class="input-group">
+                      <select class="form-control" id="prod-list">
+                        <!-- <option value="Prod">Prod</option> -->
+                      </select>
+                    <select class="form-control" id="month-list">
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Feature" id='addbar'>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-dark" id='add-button'>Add</button>
+                      </div>
+                  </div>
+            </div>
+
+
 
   </div>
 
@@ -115,9 +125,45 @@
         $(document).ready(function(){
             $(".toggler").click(function(e){
                 e.preventDefault();
-                $('.sub'+$(this).attr('data-prod')).toggle();
+                $('.sub'+$(this).attr('data')).toggle();
             });
         });
+
+        var prodlist = document.getElementById('prod-list');
+
+            var i = 0;
+            $('td').each(function(){
+                if($(this).hasClass("toggler")){
+                    var val = $(this).text();
+                    console.log("val: " + val)
+                    prodlist.options[i] = new Option(val, val);
+                    i++;
+                }
+                    
+            });
+
+        // prodlist.options[0] = new Option('--Select--', '');
+        // prodlist.options[1] = new Option('Product', 'Product');
+
+        document.getElementById('add-button').addEventListener('click', addFeature, false);
+
+        function addFeature(){
+            var prodname =  document.getElementById('prod-list').value
+            var month = document.getElementById('month-list').value
+            var feature =document.getElementById('addbar').value
+
+            console.log("productname: " + prodname)
+            console.log("month: " + month)
+            console.log("feature: " + feature)
+
+            var t = document.getElementById(prodname);
+            console.log(t);
+
+        }
+
+
+        
+
   
   </script>
 
