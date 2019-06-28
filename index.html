@@ -58,7 +58,7 @@
                     </tr>    
                 </thead>
                 <tbody id="table">
-                        <tr>
+                        <!-- <tr>
                             <td class="toggler" colspan="13" id="Test Product">Test Product</td>
                         </tr>
                         <tr class="child" style="display:none">
@@ -78,7 +78,7 @@
                         </tr>
                         
                         <tr>
-                                <td class="toggler" colspan="13" id="Test Product 2">Test Product 2</td>
+                            <td class="toggler" colspan="13" id="Test Product 2">Test Product 2</td>
                             </tr>
                             <tr class="child" style="display:none">
                                     <td></td>
@@ -94,12 +94,12 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>   
-                            </tr>
+                            </tr> -->
                             
                 </tbody>
         </table>
 
-        <div id="add" class="container">
+        <div id="add-feat" class="container">
                 <h4><br>Add a feature to product...</h4>
                     <div class="input-group">
                       <select class="form-control" id="prod-list">
@@ -124,28 +124,42 @@
                         <button class="btn btn-outline-dark" id='add-button'>Add</button>
                       </div>
                   </div>
-            </div>
+        </div>
+
+        <div id="add-prod" class="container">
+                <h4><br>Add a new product...</h4>
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Product" id='addprodbar'>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-dark" id='addprod-button'>Add</button>
+                      </div>
+                  </div>
+        </div>
 
   </div>
 
   <script>
+
+    updateDropdown()
     
-        $(".toggler").click(function() {
+        function updateDropdown(){
+            $(".toggler").click(function() {
             $(this).closest('tr').nextUntil("tr:has(.toggler)").toggle();
-        });
-
-        var prodlist = document.getElementById('prod-list');
-
-            var i = 0;
-            $('td').each(function(){
-                if($(this).hasClass("toggler")){
-                    var val = $(this).text();
-                    console.log("val: " + val)
-                    prodlist.options[i] = new Option(val, val);
-                    i++;
-                }
-                    
             });
+
+            var prodlist = document.getElementById('prod-list');
+
+                var i = 0;
+                $('td').each(function(){
+                    if($(this).hasClass("toggler")){
+                        var val = $(this).text();
+                        console.log("val: " + val)
+                        prodlist.options[i] = new Option(val, val);
+                        i++;
+                    }
+                        
+                });
+        }
 
         // prodlist.options[0] = new Option('--Select--', '');
         // prodlist.options[1] = new Option('Product', 'Product');
@@ -156,6 +170,11 @@
             var prodname =  document.getElementById('prod-list').value
             var month = document.getElementById('month-list').value
             var feature =document.getElementById('addbar').value
+
+            if(feature == ""){
+                alert("Cannot add empty feature!");
+                return;
+            }
 
             console.log("productname: " + prodname)
             console.log("month: " + month)
@@ -191,16 +210,29 @@
                 monthnum = 12;
 
             var current = child.find("td").eq(monthnum).html()
-            // if(current != ''){
-            //     current += "<br>"
-            // }
             
             current += feature
             current += "<br>"
             child.find("td").eq(monthnum).html(current)
-                
+        }
 
+        document.getElementById('addprod-button').addEventListener('click', addProduct, false);
 
+        function addProduct(){
+            var product =  document.getElementById('addprodbar').value
+
+            if(product == ""){
+                alert("Cannot add empty product!");
+                return;
+            }
+
+            console.log($('#grid-selection'))
+            var newcol = '<tr> <td class="toggler" colspan="13" id=' + "'" + product + "'>" + product + '</td> </tr>'
+            newcol += '<tr class="child" style="display:none"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>  </tr>'
+
+            $('#grid-selection').append(newcol);
+
+            updateDropdown()
 
         }
 
