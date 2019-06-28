@@ -1,24 +1,14 @@
-.split{
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-}
-.right{
-  padding-top: 10%;
+
+.main{
+  padding-top: 5%;
   right: 0;
   background-color: white;
   left: 50%;
+  align-content: center;
 }
-.left{
-  left: 0;
-  background-color: #644117;
+.buttons{
+  padding-left: 1%;
 }
-.loginDetails{
-  text-align: center;
-}
-.formGroup{
-  text-align: center;
+.welcomeLabel{
+  padding-left: 1%;
 }

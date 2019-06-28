@@ -32,10 +32,11 @@
       <!-- </form> -->
     </nav>
 
-  <div class="split right">
-
+  <div class="main">
     <div class="loginDetails">
-      <h1>WELCOME</h1>
+      <div class="welcomeLabel">
+        <h1>WELCOME</h1>
+      </div>
         <div class="formGroup col-md-6 col-sm-12">
           <form>
             <label for:"userName">Username:</label>
@@ -48,15 +49,12 @@
           <input type="password" class="form-control" id="password" /><br />
         </form>
         </div>
-        <button onclick="login()" type="button" class="btn btn-primary btn-lg">Login</button>
-        <br>
-        <button onclick="window.location.href = 'signup.html'" type="button" class="btn btn-default btn-lg">Signup</button>
+        <div class="buttons">
+          <button onclick="login()" type="button" class="btn btn-primary btn-lg">Login</button>
+          <button onclick="window.location.href = 'signup.html'" type="button" class="btn btn-default btn-lg" >Signup</button>
+        </div>
       </div>
-      </div>
-  </div>
-  <div class="split left">
-    <!--<img src="logo.jpg" alt="">-->
-  </div>
+    </div>
   <script>
       function login(){
         var user = document.getElementById('userName').value;
@@ -64,12 +62,6 @@
         console.log("username:" + user);
         console.log("password:" + password);
       }
-      function signup(){
-
-      }
-
   </script>
-
-
   </body>
 </html>
