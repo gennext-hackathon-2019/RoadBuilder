@@ -62,6 +62,14 @@
            <input type="password" class="form-control" id="passwordConf">
          </form>
        </div>
+       <div class="dropDown">
+         <label for="Role-List">Role:</label>
+         <select class="form-control" id="Role-List">
+             <option value="Admin">Admin</option>
+             <option value="Manager">Manager</option>
+             <option value="Employee">Employee</option>
+         </select>
+       </div>
        </div>
       <div class="buttons">
        <button onclick="createAccount()" type="button" class="btn btn-primary btn-lg">Create Account</button>
@@ -70,18 +78,17 @@
      </div>
    <div class="split left">
    </div>
+     <script>
+        var config = {
+          apiKey: "apiKey",
+          authDomain: "projectId.firebaseapp.com",
+          databaseURL: "https://.firebaseio.com",
+          storageBucket: "bucket.appspot.com"
+        };
+        firebase.initializeApp(config);
 
-   <script>
-        function createAccount(){
-          var Http = new XMLHttpRequest();
-          var email = document.getElementById('email').value;
-          var username = document.getElementById('username').value;
-          var password = document.getElementById('password').value;
-          var passwordConf = document.getElementById('passwordConf').value;
-
-        }
-
+        // Get a reference to the database service
+        var database = firebase.database();
    </script>
-
   </body>
 </html>
